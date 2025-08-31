@@ -50,6 +50,16 @@ app.post("/jobs", async (req, res) => {
     res.status(404).json({ message: "Failed to post job" });
   }
 });
+
+app.get("/jobs/:jobId", async (req, res) => {
+  try {
+    const jobId = req.params.jobId;
+    const job = await Jobs.findById(jobId);
+    res.status(201).json({ data: job });
+  } catch (error) {
+    res.status(404).json({ message: " 404 Not found" });
+  }
+});
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
