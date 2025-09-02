@@ -60,6 +60,19 @@ app.get("/jobs/:jobId", async (req, res) => {
     res.status(404).json({ message: " 404 Not found" });
   }
 });
+
+app.delete("/job/:jobId", async (req, res) => {
+  const jobId = req.params.jobId;
+  try {
+    const job = await Jobs.findByIdAndDelete(jobId);
+    if (!job) {
+      return res.status(404).json({ data: "Job not found" });
+    }
+    res.status(200).json({ data: job });
+  } catch (error) {
+    res.status(404).json({ data: "not able to delete" });
+  }
+});
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

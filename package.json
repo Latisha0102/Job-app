@@ -16,5 +16,13 @@
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "mongoose": "^8.18.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Latisha0102/Job-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Latisha0102/Job-app/issues"
+  },
+  "homepage": "https://github.com/Latisha0102/Job-app#readme"
 }
